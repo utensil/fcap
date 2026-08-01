@@ -3,7 +3,7 @@
 FCAP is read “F-cap”, and is a coined acronym for Formalized Clifford Algebra
 Programme.
 
-Its goal is to build a modern Clifford algebra library in Lean for efficient
+Its goal is to build a modern library of Clifford algebras in Lean for efficient
 symbolic and numerical computation, with formal verification of both its
 mathematical foundations and executable implementations.
 
@@ -14,7 +14,7 @@ worked calculations.
 ## Theme
 
 The question is whether Lean can serve both as a formal language for the
-abstract and concrete mathematics of Clifford algebra and as an implementation
+abstract and concrete mathematics of Clifford algebras and as an implementation
 language for symbolic and numerical computation in that field.
 
 Implementing calculation makes it possible to derive mathematical results,
@@ -24,7 +24,7 @@ verification.
 
 Bridging these otherwise separately developed domains is a challenge well
 suited to Lean, both as a general-purpose programming language and as a theorem
-prover. Clifford algebra, in turn, has a variety of related mathematical
+prover. Clifford algebras, in turn, have a variety of related mathematical
 constructions and a wide range of applications in physics, computer graphics,
 robotics, and more, making it a rich subject for study.
 
@@ -46,7 +46,7 @@ Forest notes and other mathematical materials, which are corrected or reshaped
 when needed.
 
 The inquiry remains open to the many symbolic and numerical libraries built
-around different decompositions of Clifford algebra. Their designs reflect both
+around different decompositions of Clifford algebras. Their designs reflect both
 mathematical and performance considerations, and each pattern has advantages
 for particular purposes. FCAP asks how the abstract formalization established
 in Mathlib can be realized through these different patterns, so that their
