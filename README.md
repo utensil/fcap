@@ -1,5 +1,7 @@
 # FCAP
 
+![FCAP banner](assets/fcap-banner.png)
+
 FCAP is read “F-cap”, and is a coined acronym for Formalized Clifford Algebra Programme.
 
 Its goal is to build a modern library of Clifford algebras in Lean for efficient symbolic and numerical computation, with formal verification of both its mathematical foundations and executable implementations.
