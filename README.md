@@ -1,5 +1,8 @@
 # FCAP
 
+> [!WARNING]
+> Highly experimental, early-stage research. Everything here is provisional: expect frequent changes and unfinished proofs.
+
 ![FCAP banner](assets/fcap-banner.png)
 
 FCAP is read “F-cap”, and is a coined acronym for Formalized Clifford Algebra Programme.
