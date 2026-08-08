@@ -9,8 +9,6 @@ FCAP is read “F-cap”, and is a coined acronym for Formalized Clifford Algebr
 
 Its goal is to build a modern library of Clifford algebras in Lean for efficient symbolic and numerical computation, with formal verification of both its mathematical foundations and executable implementations.
 
-This repository studies Clifford algebras and their symbolic and numerical computation. Its Lean library is developed alongside expository notes and worked calculations.
-
 ## Theme
 
 The question is whether Lean can serve both as a formal language for the abstract and concrete mathematics of Clifford algebras and as an implementation language for symbolic and numerical computation in that field.
