@@ -51,9 +51,9 @@
   `dev` is the persistent integration and testing branch, not an implicit base
   for new feature work. The resulting `dev` commit is the integration unit.
 - Run the cache-first full repository verification against that exact
-  integration unit. Only after it passes may a human post the holistic review
-  comment and apply `lgth`.
-- A contiguous `dev` range whose integrations all have exact-head `lgth` may
+  integration unit. Before preparing a `main` landing, confirm that the pull
+  request also has its human comment and `lgth`.
+- A contiguous `dev` range whose integrations all have `lgth` may
   be prepared for `main` on a temporary landing ref. Rebase the already
   squashed range onto the current `main`, then check patch equivalence,
   `git range-diff`, cache-first full verification, author and committer
