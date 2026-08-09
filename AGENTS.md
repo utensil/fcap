@@ -40,23 +40,35 @@
   through commits or an updated issue or pull-request body.
 - Record review and revision considerations and changes only in commit
   messages.
+- Keep general policy in `AI_POLICY.md`; repository operating instructions
+  belong in `AGENTS.md`.
 
 ## Review states
 
-- `lgta` means "looks good to AI agent." After `lgta`, pull-request work may be
-  integrated into `dev` in Git history, not through GitHub. `dev` aggregates
-  this work for integration and testing; it is not a default feature base and
-  is reconstructed from `main` and the remaining `lgta` work after `main`
-  changes.
-- `lgth` means "looks good to human." Only a human may post the holistic review
-  comment and apply `lgth`, which gates a squash merge into `main`.
-- Both states apply to a specific head commit. A new commit requires review
-  again.
+- Remove `lgta` before changing the reviewed pull-request head. Reapply it only
+  after exact-head review and its separate gate are both satisfied.
+- A reviewed feature pull request with `lgta` is squash-merged into `dev`.
+  `dev` is the persistent integration and testing branch, not an implicit base
+  for new feature work. The resulting `dev` commit is the integration unit.
+- Run the cache-first full repository verification against that exact
+  integration unit. Only after it passes may a human post the holistic review
+  comment and apply `lgth`.
+- A contiguous `dev` range whose integrations all have exact-head `lgth` may
+  be prepared for `main` on a temporary landing ref. Rebase the already
+  squashed range onto the current `main`, then check patch equivalence,
+  `git range-diff`, cache-first full verification, author and committer
+  identities, and the exact proposed range.
+- Advance `main` linearly to the verified rebased range. Never squash a
+  feature pull request directly into `main`, create a merge commit, or apply a
+  second squash. Rebase any remaining `dev` suffix onto the new `main`; if no
+  suffix remains, align `dev` with `main`.
 
 ## Verification
 
 - Follow applicable Tau Ceti and mathlib conventions.
-- Run the repository-level `lake build` before pushing.
+- Restore the pinned Mathlib cache with `lake exe cache get` when the worktree
+  or pin requires it, then run the full `lake build FCAP` before every public
+  push.
 - Treat a skipped or unavailable check as unverified, not as a pass.
 - Keep public prose in American English and separate mathematical results from
   physics motivation or hypotheses.
