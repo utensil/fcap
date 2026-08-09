@@ -40,6 +40,8 @@
   through commits or an updated issue or pull-request body.
 - Record review and revision considerations and changes only in commit
   messages.
+- Keep `AI_POLICY.md` limited to accountability and review ownership; branch,
+  integration, verification, and landing mechanics belong only in this file.
 
 ## Review states
 
