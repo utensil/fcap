@@ -29,9 +29,21 @@ messages. They do not post comments. Review and revision considerations and
 changes are reflected only in commit messages. Humans own pull-request comments
 and the `lgth` label.
 
-AI agents also own `dev`, the integration and testing branch for pull-request
-work that has reached `lgta`. It is not an implicit base for new work. Merge
-into `main` is squashed and requires one holistic human comment and the `lgth`
-label. The comment has no format requirement and may contain spelling or
-grammar errors, but it must faithfully represent the human perception and
-consideration of the pull request.
+AI agents also own `dev`, the persistent integration and testing branch for
+pull-request work that has reached exact-head `lgta`. Such work is
+squash-merged into `dev`, and the resulting integration unit receives
+cache-first full repository verification. `dev` is not an implicit base for
+new feature work.
+
+After that verification, one holistic human comment and exact-head `lgth` make
+the integration eligible for `main`. The comment has no format requirement
+and may contain spelling or grammar errors, but it must faithfully represent
+the human perception and consideration of the pull request.
+
+Eligible contiguous `dev` integrations are rebased onto current `main` on a
+temporary landing ref. Patch equivalence, `git range-diff`, cache-first full
+verification, identities, and the exact range are checked before `main`
+advances linearly. Feature pull requests are never squash-merged directly into
+`main`; the landing uses neither a merge commit nor a second squash. Any
+remaining `dev` suffix is rebased onto the new `main`, or `dev` is aligned with
+`main` when no suffix remains.
