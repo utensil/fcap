@@ -45,14 +45,14 @@
 
 ## Review states
 
-- `lgta` means "looks good to AI agent." It applies to an exact pull-request
-  head, so a new commit requires review again.
+- Remove `lgta` before changing the reviewed pull-request head. Reapply it only
+  after exact-head review and its separate gate are both satisfied.
 - A reviewed feature pull request with `lgta` is squash-merged into `dev`.
   `dev` is the persistent integration and testing branch, not an implicit base
   for new feature work. The resulting `dev` commit is the integration unit.
 - Run the cache-first full repository verification against that exact
   integration unit. Only after it passes may a human post the holistic review
-  comment and apply `lgth`, meaning "looks good to human."
+  comment and apply `lgth`.
 - A contiguous `dev` range whose integrations all have exact-head `lgth` may
   be prepared for `main` on a temporary landing ref. Rebase the already
   squashed range onto the current `main`, then check patch equivalence,

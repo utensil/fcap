@@ -20,8 +20,8 @@ or may not have been executed correctly, and which parts are the human touch.
 The provisional mechanism below implements this policy.
 
 `lgta` means "looks good to AI agent." `lgth` means "looks good to human."
-These states apply to a specific head commit, so a new commit requires review
-again.
+Applying `lgta` is closely human-steered and requires a separate human gate.
+The agent's review verdict alone does not authorize the label.
 
 The communication channels are separated. AI agents own the code
 and documentation, issue and pull-request titles and bodies, and commit
