@@ -23,6 +23,9 @@ The provisional mechanism below implements this policy.
 Applying `lgta` is closely human-steered and requires a separate human gate.
 The agent's review verdict alone does not authorize the label.
 
+`lgth` records human judgment of the pull request as a whole and remains valid
+across later commits.
+
 The communication channels are separated. AI agents own the code
 and documentation, issue and pull-request titles and bodies, and commit
 messages. They do not post comments. Review and revision considerations and
@@ -30,10 +33,10 @@ changes are reflected only in commit messages. Humans own pull-request comments
 and the `lgth` label.
 
 AI agents own `dev` integration and testing; humans own approval for `main`.
-Agent review and verification precede one holistic human comment and
-exact-head `lgth`. The comment has no format requirement and may contain
-spelling or grammar errors, but it must faithfully represent the human
-perception and consideration of the pull request.
+Human review consists of one holistic comment and `lgth`. The comment has no
+format requirement and may contain spelling or grammar errors, but it must
+faithfully represent the human perception and consideration of the pull
+request.
 
 `AGENTS.md` is authoritative for branch topology, integration, verification,
 and landing procedure. This file records responsibility and review ownership
